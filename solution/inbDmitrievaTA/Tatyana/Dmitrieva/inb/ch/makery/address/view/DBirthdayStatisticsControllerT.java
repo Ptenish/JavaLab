@@ -47,6 +47,6 @@ public class DBirthdayStatisticsControllerT {
 	            series.getData().add(new XYChart.Data<>(dmonthNamest.get(i), monthCounter[i]));
 	        }
 
-	        mbarChartm.getData().add(series);
+	        dbarChartt.getData().add(series);
 	    }
 }

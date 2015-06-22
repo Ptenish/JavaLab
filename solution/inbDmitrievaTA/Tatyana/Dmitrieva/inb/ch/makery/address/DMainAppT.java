@@ -175,15 +175,15 @@ public class DMainAppT extends Application {
 	    
 	    public void dloadPersonDataFromFileT(File file) {
 	        try {
-	            JAXBContext mcontextm = JAXBContext
+	            JAXBContext dcontextt = JAXBContext
 	                    .newInstance(DPersonListWrapperT.class);
-	            Unmarshaller mumm = dcontextt.createUnmarshaller();
+	            Unmarshaller dumt = dcontextt.createUnmarshaller();
 
 	           
 	            DPersonListWrapperT dwrappert = (DPersonListWrapperT) dumt.unmarshal(file);
 
 	            dpersonDatatt.clear();
-	            dpersonDatatt.addAll(mwrapperm.getPersons());
+	            dpersonDatatt.addAll(dwrappert.getPersons());
 
 	            
 	            dsetPersonFilePathT(file);
@@ -201,15 +201,15 @@ public class DMainAppT extends Application {
 	        try {
 	            JAXBContext dcontextt = JAXBContext
 	                    .newInstance(DPersonListWrapperT.class);
-	            Marshaller mmm = mcontextm.createMarshaller();
-	            mmm.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+	            Marshaller dmt = dcontextt.createMarshaller();
+	            dmt.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 	         
 	            DPersonListWrapperT dwrappert = new DPersonListWrapperT();
 	            dwrappert.setPersons(dpersonDatatt);
 
 	            
-	            mmm.marshal(dwrappert, file);
+	            dmt.marshal(dwrappert, file);
 
 	           
 	            dsetPersonFilePathT(file);
@@ -233,7 +233,7 @@ public class DMainAppT extends Application {
 	            Scene scene = new Scene(dpaget);
 	            dialogStage.setScene(scene);
 
-	            DBirthdayStatisticsControllerT controller = mloaderm.getController();
+	            DBirthdayStatisticsControllerT controller = dloadert.getController();
 	            controller.dsetPersonDatat(dpersonDatatt);
 
 	            dialogStage.show();

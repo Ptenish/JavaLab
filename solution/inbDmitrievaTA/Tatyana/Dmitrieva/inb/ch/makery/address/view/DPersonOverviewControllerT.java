@@ -101,7 +101,7 @@ public class DPersonOverviewControllerlT {
 	}
 
 	@FXML
-	private void mhandleEditPersonM() {
+	private void dhandleEditPersonT() {
 		DPersonT selectedPerson = personTable.getSelectionModel()
 				.getSelectedItem();
 		if (selectedPerson != null) {
